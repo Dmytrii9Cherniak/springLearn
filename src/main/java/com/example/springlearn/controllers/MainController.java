@@ -44,7 +44,7 @@ public class MainController {
             String jwtToken = Jwts.builder()
                     .setSubject(authenticaticate.getName())
                     .signWith(SignatureAlgorithm.HS512, "key".getBytes())
-                    .setExpiration(new Date(System.currentTimeMillis() + 21000))
+                    .setExpiration(new Date(System.currentTimeMillis() + 10 * 60 * 1000))
                     .compact();
 
             HttpHeaders headers = new HttpHeaders();

@@ -28,7 +28,7 @@ public class CustomFilter extends OncePerRequestFilter {
             FilterChain filterChain) throws ServletException, IOException {
 
         String authorization = request.getHeader("Authorization");
-        if (authorization != null && authorization.startsWith("Bearer")) {
+        if (authorization != null && authorization.startsWith("Bearer ")) {
             String token = authorization.replace("Bearer ", "");
             String subject = Jwts.parser()
                     .setSigningKey("key".getBytes())
